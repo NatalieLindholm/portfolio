@@ -60,6 +60,18 @@ export default function Home() {
             </p>
             <p className="w-[450px] text-[25px] mt-5  ">
               Some of my certifactions:
+              <ul>
+                <li>
+                  <a
+                    href="https://freecodecamp.org/certification/fcc895a2e5e-8522-4b9b-8fd8-11c9229a14ab/responsive-web-design
+
+"
+                  >
+                    Certification in Respinsiv Web Deisgn
+                  </a>
+                </li>
+              </ul>
+              Hope to be hearing from you :D
             </p>
           </div>
         </div>
