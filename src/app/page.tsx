@@ -50,20 +50,16 @@ export default function Home() {
           <div className="">
             <p className="w-[450px] text-[25px] ">
               Hi my name is Natalie im a passionate web developer with expertise
-              in creating colorful and easy websites. Proficient in modern
-              technologies like HTML, CSS, JavaScript, and frameworks such as
-              React and Next.js, I focus on delivering seamless experiences
-              through clean, responsive designs. My goal is to combine
-              creativity with functionality, ensuring each project is not only
-              visually appealing but also intuitive and efficient. I'm always
-              eager to learn new skills and tackle exciting challenges to bring
-              innovative ideas to life on the web.
+              in creating colorful and easy websites. I have studied and learned
+              HTML, CSS, JavaScript, and frameworks such as React and Next.js, I
+              focus on making websites that are easy to understand and use. I
+              like is to combine creativity with functionality, making sure each
+              project is not only visually good looking but also efficient. Im
+              always eager to learn new skills and tackle exciting challenges to
+              further my knowledge as a web developer.
             </p>
             <p className="w-[450px] text-[25px] mt-5  ">
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.Excepteur sint
-              occaecat cupidatat non proident, sunt in culpa qui officia
-              deserunt mollit anim id est laborum.
+              Some of my certifactions:
             </p>
           </div>
         </div>
