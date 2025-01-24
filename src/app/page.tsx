@@ -50,58 +50,75 @@ export default function Home() {
       </div>
 
       {/* Body */}
-      <div>
-        {/* About */}
-        <div>
-          <Image
-            src="/planet.svg"
-            alt="Vector Icon"
-            width={120}
-            height={120}
-            className="absolute right-10 z-10 -bottom-16"
-          />
-          <div
-            id="about"
-            className="border-[#55628d] absolute right-9 pt-6 pb-10 pl-9 pr-9  border-[5px] rounded-[80px]"
-          >
-            <h1 className="text-[#2f3b6f] text-[55px] relative">About</h1>
-            <div className="">
-              <p className="w-[450px] text-[20px] ">
-                Hi my name is Natalie im a web developer that likes to create
-                colorful and easy websites. I have studied and learned HTML,
-                CSS, JavaScript, and frameworks like React and Next.js but also
-                database usage such as SQL.
-              </p>
-              <p className="w-[450px] text-[20px] mt-5">
-                I like is to combine creativity with functionality, making sure
-                each project is both visually good looking and efficient. Im
-                always eager to learn new skills and to further my knowledge as
-                a web developer.
-              </p>
-              <h3 className="w-[450px] text-[20px] mt-5  ">
-                Some of my certifactions:
-                <ul>
-                  <li>
-                    <a
-                      className="text-blue-500"
-                      href="https://freecodecamp.org/certification/fcc895a2e5e-8522-4b9b-8fd8-11c9229a14ab/responsive-web-design
-
-"
-                    >
-                      Certification in Respinsiv Web Deisgn
-                    </a>
-                  </li>
-                </ul>
-                <p className="mt-5 ml-10"> Hope to be hearing from you :D</p>
-              </h3>
+      <div className="h-screen">
+        <div className="relative flex justify-end">
+          <div className="space-y-10">
+            {/* About */}
+            <div className="relative">
+              <Image
+                src="/planet.svg"
+                alt="Vector Icon"
+                width={120}
+                height={120}
+                className="absolute right-10 z-10 -translate-y-16"
+              />
+              <div
+                id="about"
+                className="border-[#55628d] pt-6 pb-10 pl-9 pr-9 border-[5px] rounded-[80px] relative right-0"
+                style={{ marginRight: "30px" }}
+              >
+                <h1 className="text-[#2f3b6f] text-[55px]">About</h1>
+                <div>
+                  <p className="w-[450px] text-[20px]">
+                    Hi my name is Natalie im a web developer that likes to
+                    create colorful and easy websites. I have studied and
+                    learned HTML, CSS, JavaScript, and frameworks like React and
+                    Next.js but also database usage such as SQL.
+                  </p>
+                  <p className="w-[450px] text-[20px] mt-5">
+                    I like to combine creativity with functionality, making sure
+                    each project is both visually good looking and efficient. Im
+                    always eager to learn new skills and to further my knowledge
+                    as a web developer.
+                  </p>
+                  <h3 className="w-[450px] text-[20px] mt-5">
+                    Some of my certifications:
+                    <p>
+                      <a
+                        className="text-blue-500"
+                        href="https://freecodecamp.org/certification/fcc895a2e5e-8522-4b9b-8fd8-11c9229a14ab/responsive-web-design"
+                      >
+                        Certification in Responsive Web Design
+                      </a>
+                    </p>
+                    <p className="mt-5 ml-10">Hope to be hearing from you :D</p>
+                  </h3>
+                </div>
+                <Image
+                  src="/sparkels.svg"
+                  alt="Vector Icon"
+                  width={90}
+                  height={90}
+                  className="absolute z-10 -left-10 -bottom-3"
+                />
+              </div>
             </div>
-            <Image
-              src="/sparkels.svg"
-              alt="Vector Icon"
-              width={90}
-              height={90}
-              className="absolute z-10 -left-7 -bottom-3"
-            />
+
+            {/* Language */}
+            <div>
+              <h1 className="text-[#2f3b6f] text-[55px]">Language</h1>
+              <div className="flex">
+                <h1>Swedish</h1>
+                <Image
+                  src="/fiveStar.svg"
+                  alt="Vector Icon"
+                  width={90}
+                  height={90}
+                />
+              </div>
+              <h1>English</h1>
+              <h1>Finnish</h1>
+            </div>
           </div>
         </div>
 
