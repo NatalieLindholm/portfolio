@@ -1,7 +1,5 @@
 "use client";
 import Image from "next/image";
-import { FaRegEnvelope } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
 import { VscGithub } from "react-icons/vsc";
 
 export default function Home() {
@@ -10,6 +8,24 @@ export default function Home() {
       behavior: "smooth",
     });
   };
+
+  const projects = [
+    {
+      title: "Card Game",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      image: "/cardGameimg.png",
+    },
+    // {
+    //   title: "Project Name",
+    //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    //   image: "/placeholder.png",
+    // },
+    // {
+    //   title: "Another Project",
+    //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    //   image: "/placeholder.png",
+    // },
+  ];
   return (
     <div className="w-full min-h-screen ">
       {/* banner */}
@@ -55,10 +71,10 @@ export default function Home() {
       {/* Body */}
       <div className="min-h-screen w-full flex flex-col items-center">
         {/* first block */}
-        <div className="flex justify-around w-full">
+        <div className="flex justify-around w-full mt-[3%]">
           {/* About */}
-          <div className="w-2/5">
-            <div className="absolute w-2/5">
+          <div className=" w-2/5">
+            <div className="relative w-full">
               <Image
                 src="/planet.svg"
                 alt="Vector Icon"
@@ -124,12 +140,12 @@ export default function Home() {
                 alt="Portfolio photo"
                 width={90}
                 height={90}
-                className="rounded-[70px] w-[450px] h-[550px] pt-4 pb-4 pl-5 pr-5"
+                className="rounded-[70px] w-[100%] h-[600px] pt-4 pb-4 pl-5 pr-5"
               />
             </div>
 
             {/* Language */}
-            <div className="mt-10">
+            <div className="mt-[13%]">
               <h1 className="text-[#2f3b6f] text-[4vw]">Language</h1>
               <div className="flex justify-around">
                 <h1 className="text-[3vw]">Swedish</h1>
@@ -172,37 +188,29 @@ export default function Home() {
         {/* Contact */}
         <div
           id="contact"
-          className="border-[#55628d] border-[5px] rounded-[70px] w-[95%] h-[320px] flex flex-col text-end mt-28"
+          className="relative border-[#55628d] border-[5px] rounded-[70px] w-[90%] mt-[5%]"
         >
           <Image
             src="/meteor.svg"
             alt="Vector Icon"
             width={100}
             height={100}
-            className="absolute right-3 -translate-y-8"
+            className="absolute -right-3 -translate-y-10"
           />
-          <h1 className="text-[5vw] text-[#2f3b6f] mr-16 mt-2">Contact Me</h1>
-          <div className="ml-64">
+          <div className="flex flex-col items-center justify-center pb-7">
+            <h1 className="text-[5vw] text-[#2f3b6f] pt-3">Contact Me</h1>
+            <p className=" text-[3vw]">nataliemlindholm@gmail.com</p>
+            <p className="text-[3vw]">+358 40 9365379</p>
             <a href="https://github.com/NatalieLindholm">
-              <VscGithub className="text-[8rem] absolute -translate-y-3 -translate-x-16" />
+              <VscGithub className="text-[5rem] mt-2" />
             </a>
-          </div>
-          <div className="flex flex-col  items-end mt-5">
-            <div className="text-[3vw] flex justify-center items-center mr-16">
-              <p className="mr-4">nataliemlindholm@gmail.com</p>
-              <FaRegEnvelope className="text-[3.5rem]" />
-            </div>
-            <div className="text-[3vw] flex justify-center items-center mr-16 mt-6">
-              <p className="mr-4">+358 40 9365379</p>
-              <FaWhatsapp className="text-[3.5rem]" />
-            </div>
           </div>
           <Image
             src="/mau.svg"
             alt="Vector Icon"
             width={170}
             height={170}
-            className="absolute left-0 translate-y-48"
+            className="absolute bottom-0 left-0 -translate-x-10 translate-y-10"
           />
         </div>
 
@@ -212,7 +220,7 @@ export default function Home() {
           width={100}
           height={100}
           layout="responsive"
-          className="-mt-44"
+          className="-mt-[15%]"
         />
 
         {/* Projects */}
@@ -230,33 +238,44 @@ export default function Home() {
             </h1>
           </div>
 
-          <div className="flex justify-center items-center mt-14 flex-col">
-            {[...Array(5)].map((_, index) => (
-              <Image
+          {/* Timeline Container */}
+          <div className="relative flex flex-col items-center mt-14">
+            {/* Vertical Timeline Line */}
+            <Image
+              src="/projectLine.svg"
+              alt="Vector Icon"
+              width={40}
+              height={40}
+            />
+
+            {projects.map((project, index) => (
+              <div
                 key={index}
-                src="/projectLine.svg"
-                alt="Vector Icon"
-                width={40}
-                height={40}
-              />
+                className={`flex items-center w-full max-w-4xl mb-10 ${
+                  index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                }`}
+              >
+                {/* Project Image */}
+                <div className="w-5/12">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={300}
+                    height={200}
+                    className="rounded-lg shadow-lg"
+                  />
+                </div>
+
+                {/* Project Content */}
+                <div className="relative w-5/12 p-6 bg-white rounded-lg shadow-lg">
+                  <h3 className="text-lg font-bold text-[#2f3b6f]">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600">{project.description}</p>
+                </div>
+              </div>
             ))}
           </div>
-
-          {/* Project div block */}
-          {/* <div className="w-48">
-            <Image
-              src="/cardGameimg.png"
-              alt="Project Photo"
-              width={90}
-              height={90}
-            />
-            <h1 className="text-[#2f3b6f]">Card Game</h1>
-            <p>
-              A simple card game where you are against a bot and who ever draws
-              the highest cards wins. The scores are being saved to a database
-              when clicking on the end game button
-            </p>
-          </div> */}
         </div>
       </div>
     </div>
