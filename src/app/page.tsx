@@ -1,5 +1,7 @@
 "use client";
+
 import Image from "next/image";
+import Link from "next/link";
 import { VscGithub } from "react-icons/vsc";
 
 export default function Home() {
@@ -12,19 +14,24 @@ export default function Home() {
   const projects = [
     {
       title: "Card Game",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description:
+        "A simple card game where you are against a bot and who ever draws the highest cards wins. The scores are being saved to a database when clicking on the end game button",
       image: "/cardGameimg.png",
+      link: "https://github.com/NatalieLindholm/cardgame",
     },
-    // {
-    //   title: "Project Name",
-    //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    //   image: "/placeholder.png",
-    // },
-    // {
-    //   title: "Another Project",
-    //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    //   image: "/placeholder.png",
-    // },
+    {
+      title: "Pokemon Search",
+      description:
+        "A pokémon search that uses a Pokémon API (https://pokeapi.co)",
+      image: "/pokeSearchimg.png",
+      link: "https://github.com/NatalieLindholm/Pokemon-Search",
+    },
+    {
+      title: "3D Interactive",
+      description: "A simple 3D interactiv object",
+      image: "/3dInteractiveimg.png",
+      link: "https://github.com/NatalieLindholm/3d_interactive",
+    },
   ];
   return (
     <div className="w-full min-h-screen ">
@@ -224,59 +231,66 @@ export default function Home() {
         />
 
         {/* Projects */}
-        <div id="projects" className="-mt-56">
-          <div className="border-[#55628d] border-[5px] rounded-[70px]">
+        <div
+          id="projects"
+          className="relative -mt-56 flex justify-center flex-col items-center"
+        >
+          {/* Title & Border Box */}
+          <div className="border-[#55628d] border-[5px] rounded-[70px] mb-16 relative">
             <Image
               src="/sparkels.svg"
               alt="Vector Icon"
               width={90}
               height={90}
-              className="absolute -translate-x-7 -translate-y-7 "
+              className="absolute -translate-x-7 -translate-y-7"
             />
             <h1 className="text-[#2f3b6f] text-[4vw] pr-9 pl-9 p-2">
               Projects
             </h1>
           </div>
 
-          {/* Timeline Container */}
-          <div className="relative flex flex-col items-center mt-14">
-            {/* Vertical Timeline Line */}
-            <Image
-              src="/projectLine.svg"
-              alt="Vector Icon"
-              width={40}
-              height={40}
-            />
+          {/* Flex container for projects & vertical line */}
+          <div className="relative flex w-full max-w-[1200px]">
+            {/* SVG Line - Positioned in the center */}
+            <div className="absolute left-1/2 -translate-x-1/2 w-[5px] bg-[#55628d] h-full z-[-1]"></div>
 
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className={`flex items-center w-full max-w-4xl mb-10 ${
-                  index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                }`}
-              >
-                {/* Project Image */}
-                <div className="w-5/12">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-lg"
-                  />
-                </div>
+            {/* Projects */}
+            <div className="flex flex-col items-center w-full pr-6 pl-6">
+              {projects.map((project, index) => (
+                <div
+                  key={index}
+                  className={`flex w-full max-w-[1200px] ${
+                    index % 2 === 0 ? "justify-start" : "justify-end"
+                  }`}
+                >
+                  <div className="w-[45%] flex flex-col relative">
+                    {/* Image */}
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={0}
+                      height={0}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 50vw"
+                      className="w-full h-auto rounded-[30px] object-cover"
+                    />
 
-                {/* Project Content */}
-                <div className="relative w-5/12 p-6 bg-white rounded-lg shadow-lg">
-                  <h3 className="text-lg font-bold text-[#2f3b6f]">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600">{project.description}</p>
+                    {/* Title & Description */}
+                    <div>
+                      <Link href={project.link}>
+                        <h1 className="text-[3vw] mt-3 text-[#2f3b6f] hover:underline cursor-pointer">
+                          {project.title}
+                        </h1>
+                      </Link>
+                      <p className="text-[2vw]">{project.description}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
+
+        {/* ======= */}
       </div>
     </div>
   );
