@@ -235,7 +235,6 @@ export default function Home() {
           id="projects"
           className="relative -mt-56 flex justify-center flex-col items-center"
         >
-          {/* Title & Border Box */}
           <div className="border-[#55628d] border-[5px] rounded-[70px] mb-16 relative">
             <Image
               src="/sparkels.svg"
@@ -249,22 +248,21 @@ export default function Home() {
             </h1>
           </div>
 
-          {/* Flex container for projects & vertical line */}
           <div className="relative flex w-full max-w-[1200px]">
             {/* SVG Line - Positioned in the center */}
-            <div className="absolute left-1/2 -translate-x-1/2 w-[5px] bg-[#55628d] h-full z-[-1]"></div>
+            <div className="absolute left-1/2 -translate-x-1/2 w-[5px] bg-[#302F37] rounded-3xl h-[100%] -mt-10"></div>
 
-            {/* Projects */}
             <div className="flex flex-col items-center w-full pr-6 pl-6">
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className={`flex w-full max-w-[1200px] ${
+                  className={`flex w-full max-w-[1200px] relative ${
                     index % 2 === 0 ? "justify-start" : "justify-end"
                   }`}
                 >
+                  <div className="bg-[#302F37] rounded-full w-10 h-10 absolute left-1/2 -translate-x-1/2 top-[16rem]"></div>
+
                   <div className="w-[45%] flex flex-col relative">
-                    {/* Image */}
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -274,7 +272,6 @@ export default function Home() {
                       className="w-full h-auto rounded-[30px] object-cover"
                     />
 
-                    {/* Title & Description */}
                     <div>
                       <Link href={project.link}>
                         <h1 className="text-[3vw] mt-3 text-[#2f3b6f] hover:underline cursor-pointer">
@@ -289,8 +286,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* ======= */}
       </div>
     </div>
   );
