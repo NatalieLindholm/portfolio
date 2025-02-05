@@ -1,3 +1,1 @@
-- TO DO -
-  > fix minor design issue like img responsiv
-  > fix project line
+A portfolio made by Natalie Lindholm
