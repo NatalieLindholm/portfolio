@@ -233,7 +233,7 @@ export default function Home() {
         {/* Projects */}
         <div
           id="projects"
-          className="relative -mt-56 flex justify-center flex-col items-center"
+          className="relative -mt-[15%] flex justify-center flex-col items-center"
         >
           <div className="border-[#55628d] border-[5px] rounded-[70px] mb-16 relative">
             <Image
@@ -252,7 +252,7 @@ export default function Home() {
             {/* SVG Line - Positioned in the center */}
             <div className="absolute left-1/2 -translate-x-1/2 w-[5px] bg-[#302F37] rounded-3xl h-[100%] -mt-10"></div>
 
-            <div className="flex flex-col items-center w-full pr-6 pl-6">
+            <div className="flex flex-col items-center w-full pr-6 pl-6 ">
               {projects.map((project, index) => (
                 <div
                   key={index}
@@ -273,11 +273,18 @@ export default function Home() {
                     />
 
                     <div>
-                      <Link href={project.link}>
-                        <h1 className="text-[3vw] mt-3 text-[#2f3b6f] hover:underline cursor-pointer">
+                      <Link
+                        href={project.link}
+                        className=" relative inline-block"
+                      >
+                        <h1
+                          className="text-[3vw] mt-3 text-[#2f3b6f] cursor-pointer border-[4px] border-transparent px-3 rounded-full transition-all 
+    hover:border-[#5066A8]"
+                        >
                           {project.title}
                         </h1>
                       </Link>
+
                       <p className="text-[2vw]">{project.description}</p>
                     </div>
                   </div>
