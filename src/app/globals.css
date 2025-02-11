@@ -11,3 +11,108 @@
 body {
   background-color: #f6f7f9;
 }
+
+#mobileShow {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  #mobileHide {
+    display: none;
+  }
+  #mobileShow {
+    display: block;
+  }
+
+  #mobileBody {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  #mobileFirstBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15%;
+  }
+
+  #mobileAboutWidth {
+    width: 90%;
+    margin-bottom: 20%;
+  }
+
+  #mobileText {
+    font-size: 2rem;
+  }
+
+  #mobileAboutTitle {
+    font-size: 3rem;
+  }
+
+  #mobilePlanet {
+    position: absolute;
+    left: 240px;
+  }
+
+  #mobileSecondBlock {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+
+  #mobileLanguageTitle {
+    font-size: 2.5rem;
+    margin-left: 30px;
+  }
+
+  #mobileLanguageText {
+    font-size: 1.5rem;
+  }
+
+  #mobileMeteor {
+    position: absolute;
+    right: -20px;
+  }
+
+  #mobileContactText {
+    font-size: 1.5rem;
+  }
+
+  #mobileProjectFlow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #mobileTitle {
+    font-size: 2.5rem;
+  }
+
+  #projectBodyWidth {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
+  }
+
+  #mobileProjectTitle {
+    font-size: 2rem;
+    width: 250px;
+    width: 100%;
+  }
+
+  #mobileTextCenter {
+    text-align: center;
+  }
+
+  #mobileProjectTitle:hover {
+    border: none;
+  }
+
+  #mobileProjectText {
+    font-size: 1.5rem;
+    width: 250px;
+    width: 100%;
+  }
+}
